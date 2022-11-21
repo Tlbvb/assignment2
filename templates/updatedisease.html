@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+
+<h1>Update disease</h1>
+
+<form action="updaterecord{{x.disease_code}}" method="post">
+{% csrf_token %}
+Disease code:<br>
+<select name="disease_code" id="disease_code">
+  {% for x in dis_code %}
+  <option value="{{x.disease_code}}">{{x.disease_code}}</option>
+  {%endfor%}
+</select>
+<br><br>
+Pathogen:<br>
+<input name="pathogen" value="{{ x.pathogen }}">
+<br><br>
+ Description:<br>
+<input name="description" value="{{ x.description }}">
+<br><br>
+Id:<br>
+<select name="id" id="id">
+  {% for x in idd %}
+  <option value="{{x.id}}">{{x.id}}</option>
+  {%endfor%}
+</select>
+<br><br>
+<input type="submit" value="Submit">
+</form>

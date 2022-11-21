@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+
+<table border="1">
+    {% for x in objects %}
+      <tr>
+      <td>{{ x.disease_type.id}}</td>
+      <td>{{ x.email.email.email}}</td>
+      <td><a href="deletespecialize/{{ x.email.email.email}}/{{x.disease_type.id}}">delete</a></td>
+      <td><a href="updatespecialize{{x.disease_type.id}}{{ x.email.email.email}}">update</a></td>
+      <!--<td>{{ x.address }}</td>
+      <td>{{ x.registration_date }}</td>
+      <td>{{ x.password }}</td>
+      <td>{{ x.marital_status }}</td>
+      <td><a href="deletepatient/{{ x.id }}">delete</a></td>-->
+      </tr>
+    {% endfor %}
+    </table>
+    <button onclick="location.href = 'register/specialize'">Register a disease type</button>
+    <a class="btn btn-outline-secondary"  href="{% url 'index' %}">Main page</a>
+  

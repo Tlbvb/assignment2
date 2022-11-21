@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+
+<h1>Update record</h1>
+
+<form action="updaterecrecord{{x.email}}{{x.cname}}{{x.disease_code}}" method="post">
+{% csrf_token %}
+Email:<br>
+<input name="email" value="{{ x.email }}">
+<br><br>
+Country:<br>
+<input name="cname" value="{{ x.cname }}">
+<br><br>
+
+Disease code:<br>
+<input name="disease_code" value="{{ x.disease_code }}">
+<br><br>
+
+Total deaths:<br>
+<input name="total_deaths" value="{{ x.total_deaths }}">
+<br><br>
+
+Total patients:<br>
+<input name="total_patients" value="{{ x.total_patients }}">
+<br><br>
+<!-- Date of birth:<br>
+<input name="birthdate" value="{{ doctor.date_of_birth }}">
+<br><br>
+ IIN num:<br>
+<input name="iin" value="{{ doctor.iin_num}}">
+<br><br>-->
+<input type="submit" value="Submit">
+</form>

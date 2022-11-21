@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+
+<h1>Register a discover</h1>
+
+<form action="" method="POST">
+    {% csrf_token%}
+    <p>Country:</p>
+    <select name="cname" id="cname">
+        {% for x in country %}
+        <option value="{{x.cname}}">{{x.cname}}</option>
+        {%endfor%}
+    </select>
+    <p>Disease code:</p>
+    <select name="disease_code" id="disease_code">
+        {% for x in disease_code %}
+        <option value="{{x.disease_code}}">{{x.disease_code}}</option>
+        {%endfor%}
+    </select>
+    <p>First enc date:</p>
+    <input type="text" name="first_enc_date">
+    <br>
+    <input type="submit">
+</form> 
